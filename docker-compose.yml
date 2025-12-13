@@ -13,7 +13,7 @@ services:
           memory: 512M
           cpus: "1.0"
     environment:
-      - WAZUH_MANAGER_SERVER=10.20.200.106
+      - WAZUH_MANAGER_SERVER=${WAZUH_MANAGER_SERVER}
       - WAZUH_AGENT_NAME=${WAZUH_AGENT_NAME}
       - WAZUH_MANAGER_SERVER_PORT=${WAZUH_MANAGER_SERVER_PORT}
       - WAZUH_HOST_PROC=/host_proc
@@ -21,7 +21,7 @@ services:
       - WAZUH_HOST_DEV=/host_dev
       - WAZUH_HOST_MEMINFO=/host_proc_meminfo
     volumes:
-      - ./wazuh-agent/conf/wazuh-agent.conf:/wazuh-config-mount/etc/ossec.conf
+      - ./wazuh-agent/conf/wazuh-agent.conf:/etc/ossec.conf
       - /proc:/host_proc:ro
       - /sys:/host_sys:ro
       - /dev:/host_dev:ro
