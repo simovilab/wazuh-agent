@@ -22,7 +22,7 @@ services:
       #- WAZUH_HOST_MEMINFO=/host_proc_meminfo
     volumes:
       - ./wazuh-agent/conf/wazuh-agent.conf:/etc/ossec.conf
-      - /var/lib/lxcfs/proc:/proc:ro
+      - /var/lib/lxcfs/proc/cpuinfo:/proc/cpuinfo:ro
       - /var/lib/lxcfs/sys:/sys:ro
       - /var/lib/lxcfs/proc/meminfo:/proc/meminfo:ro
       #- /dev:/dev:ro
