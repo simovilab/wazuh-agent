@@ -22,8 +22,9 @@ services:
       #- WAZUH_HOST_MEMINFO=/host_proc_meminfo
     volumes:
       - ./wazuh-agent/conf/wazuh-agent.conf:/etc/ossec.conf
-      #- /proc:/host_proc:ro
-      #- /sys:/host_sys:ro
-      #- /dev:/host_dev:ro
+      - /var/lib/lxcfs/proc:/proc:ro
+      - /var/lib/lxcfs/sys:/sys:ro
+      - /var/lib/lxcfs/proc/meminfo:/proc/meminfo:ro
+      #- /dev:/dev:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
       #- /proc/meminfo:/host_proc_meminfo:ro
