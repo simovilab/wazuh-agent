@@ -1,3 +1,4 @@
+# AGENTE WAZUH DOCKER
 services:
   wazuh.agent:
     image: wazuh/wazuh-agent:4.14.1
