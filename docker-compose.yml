@@ -16,14 +16,14 @@ services:
       - WAZUH_MANAGER_SERVER=${WAZUH_MANAGER_SERVER}
       - WAZUH_AGENT_NAME=${WAZUH_AGENT_NAME}
       - WAZUH_MANAGER_SERVER_PORT=${WAZUH_MANAGER_SERVER_PORT}
-      - WAZUH_HOST_PROC=/host_proc
-      - WAZUH_HOST_SYS=/host_sys
-      - WAZUH_HOST_DEV=/host_dev
-      - WAZUH_HOST_MEMINFO=/host_proc_meminfo
+      #- WAZUH_HOST_PROC=/host_proc
+      #- WAZUH_HOST_SYS=/host_sys
+      #- WAZUH_HOST_DEV=/host_dev
+      #- WAZUH_HOST_MEMINFO=/host_proc_meminfo
     volumes:
       - ./wazuh-agent/conf/wazuh-agent.conf:/etc/ossec.conf
-      - /proc:/host_proc:ro
-      - /sys:/host_sys:ro
-      - /dev:/host_dev:ro
+      #- /proc:/host_proc:ro
+      #- /sys:/host_sys:ro
+      #- /dev:/host_dev:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - /proc/meminfo:/host_proc_meminfo:ro
+      #- /proc/meminfo:/host_proc_meminfo:ro
